@@ -3,12 +3,23 @@ package edu.htc.blitstein.caih313.tddstack.engine;
 import edu.htc.blitstein.caih313.tddstack.IStackable;
 
 public class TddStack {
+    static final long DEFAULT_DEPTH = 100;
 
-    //to compile, this method must return something, but this
-    //code is just to make it compile, not a real implementation
+    long stackDepth;
+
+    TddStack(long stackDepth) {
+        this.stackDepth = stackDepth;
+    }
+
+    public TddStack() {
+        this(DEFAULT_DEPTH);
+    }
+
     boolean isEmpty(){
         return false;
     }
+
+    boolean isFull() { return false;}
 
     IStackable pop() {
         //any object can be null; again, just to get it to compile
