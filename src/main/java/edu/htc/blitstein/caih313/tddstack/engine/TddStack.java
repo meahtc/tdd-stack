@@ -3,12 +3,17 @@ package edu.htc.blitstein.caih313.tddstack.engine;
 import edu.htc.blitstein.caih313.tddstack.IStackable;
 
 public class TddStack {
-    static final long DEFAULT_DEPTH = 100;
+    static final int DEFAULT_DEPTH = 100;
 
-    long stackDepth;
+    int stackDepth;
 
-    TddStack(long stackDepth) {
+    private IStackable[] stack;
+    private int currentOccupancy;
+
+    TddStack(int stackDepth) {
         this.stackDepth = stackDepth;
+        stack = new IStackable[stackDepth];
+        currentOccupancy = -1;
     }
 
     public TddStack() {
@@ -16,18 +21,26 @@ public class TddStack {
     }
 
     boolean isEmpty(){
-        return false;
+        return currentOccupancy > -1;
     }
 
-    boolean isFull() { return false;}
+    boolean isFull() {
+        return currentOccupancy == (stackDepth-1);}
 
     IStackable pop() {
-        //any object can be null; again, just to get it to compile
-        return null;
+        IStackable retval = null;
+        if (!isEmpty()) {
+            retval = stack[currentOccupancy];
+            currentOccupancy -= 1;
+        }
+        return retval;
     }
 
     void push(IStackable iStackable) {
-        //doesn't need to return anything
+        if (!isFull()) {
+            currentOccupancy += 1;
+            stack[currentOccupancy] = iStackable;
+        }
     }
 
 
