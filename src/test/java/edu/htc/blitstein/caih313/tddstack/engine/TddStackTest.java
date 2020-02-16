@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+
 public class TddStackTest {
     @Test
     public void testNewStackIsEmpty() {
@@ -21,7 +22,7 @@ public class TddStackTest {
     @Test
     public void testNewStackIsNotFull() {
         TddStack tddStack = new TddStack();
-        assertFalse(tddStack.isEmpty());
+        assertFalse(tddStack.isFull());
     }
 
     @Test

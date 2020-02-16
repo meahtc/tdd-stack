@@ -21,7 +21,7 @@ public class TddStack {
     }
 
     boolean isEmpty(){
-        return currentOccupancy > -1;
+        return currentOccupancy  == -1;
     }
 
     boolean isFull() {
