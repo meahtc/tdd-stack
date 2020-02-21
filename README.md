@@ -1,0 +1,2 @@
+# tdd-stack
+A stack is a special kind of collection; it is also known as a LIFO (last in, first out) queue. It is a place to put things until they are needed. They are used when there are limited resources that are needed for a certain period of time, then can be returned to the pool, possibly after cleaning, then reused. Think dishes. Think computers in a lab. Think space for local variables needed by a method.
